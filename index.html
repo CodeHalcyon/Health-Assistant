@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style>
+      .circle-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px; /* Maximum width */
+        height: 75px; /* Maximum height */
+        background-color: #4caf50; /* You can change the color */
+        color: white;
+        border-radius: 50%;
+        font-size: 10px; /* Adjust text size */
+        font-weight: bold;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        text-align: center;
+        z-index: 9999;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      .circle-button span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="circle-button">
+      <span>Ask the Expert</span>
+    </div>
+
+    <script type="text/javascript">
+      (function (d, t) {
+        var v = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: "679342ff7fab5e039f5e29dd" },
+            url: "https://general-runtime.voiceflow.com",
+            versionID: "production",
+          });
+        };
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+      })(document, "script");
+    </script>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
